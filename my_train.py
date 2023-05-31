@@ -37,7 +37,7 @@ def train(batch_size, no_nodes, policy_net, surrogate, lr_p, lr_s, no_agent, ite
         loss = torch.mul(torch.tensor(cost, device=device) - 2, log_prob.sum(dim=1)).sum() \
                - torch.mul(cost_s.detach() - 2, log_prob.sum(dim=1)).sum() \
                + (cost_s - 2).sum()
-        # 444
+        # 555
         # compute gradient's variance loss w.r.t. surrogate's parameter
         grad_p = torch.autograd.grad(loss, policy_net.parameters(),
                                      grad_outputs=torch.ones_like(loss), create_graph=True, retain_graph=True)
