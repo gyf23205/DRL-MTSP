@@ -1,0 +1,44 @@
+{
+    "os": "Windows-10-10.0.19044-SP0",
+    "python": "3.8.13",
+    "heartbeatAt": "2023-05-08T02:49:20.066590",
+    "startedAt": "2023-05-08T02:49:17.065675",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "D:/pycharm/Projects/DRL-MTSP-main/playground.py",
+    "codePath": "playground.py",
+    "host": "MSI",
+    "username": "63218",
+    "executable": "D:\\Anaconda\\envs\\VRP\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 2301.0,
+        "min": 0.0,
+        "max": 2301.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2301.0,
+            "min": 0.0,
+            "max": 2301.0
+        }
+    ],
+    "disk": {
+        "total": 151.18261337280273,
+        "used": 113.95611572265625
+    },
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3070 Laptop GPU",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 15.708480834960938
+    }
+}

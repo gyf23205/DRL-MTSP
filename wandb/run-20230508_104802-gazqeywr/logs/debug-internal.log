@@ -1,0 +1,78 @@
+2023-05-08 10:48:02,927 INFO    StreamThr :6628 [internal.py:wandb_internal():86] W&B internal server running at pid: 6628, started at: 2023-05-08 10:48:02.927371
+2023-05-08 10:48:02,929 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: status
+2023-05-08 10:48:02,930 INFO    WriterThread:6628 [datastore.py:open_for_write():85] open: D:\pycharm\Projects\DRL-MTSP-main\wandb\run-20230508_104802-gazqeywr\run-gazqeywr.wandb
+2023-05-08 10:48:02,931 DEBUG   SenderThread:6628 [sender.py:send():375] send: header
+2023-05-08 10:48:02,932 DEBUG   SenderThread:6628 [sender.py:send():375] send: run
+2023-05-08 10:48:07,950 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:12,981 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:18,000 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:23,019 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:28,046 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:33,066 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:36,467 INFO    SenderThread:6628 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connectionpool.py", line 700, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connectionpool.py", line 996, in _prepare_proxy
+    conn.connect()
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connection.py", line 364, in connect
+    self.sock = conn = self._connect_tls_proxy(hostname, conn)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connection.py", line 499, in _connect_tls_proxy
+    socket = ssl_wrap_socket(
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\util\ssl_.py", line 453, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\util\ssl_.py", line 495, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock)
+  File "D:\Anaconda\envs\VRP\lib\ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "D:\Anaconda\envs\VRP\lib\ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "D:\Anaconda\envs\VRP\lib\ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1114: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Cannot connect to proxy.', timeout('_ssl.c:1114: The handshake operation timed out')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\internal\internal_api.py", line 285, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\lib\gql_request.py", line 55, in execute
+    request = self.session.post(self.url, **post_args)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\sessions.py", line 635, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\adapters.py", line 559, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Cannot connect to proxy.', timeout('_ssl.c:1114: The handshake operation timed out')))
+2023-05-08 10:48:38,092 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:43,127 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:48,151 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:53,175 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:48:58,197 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: keepalive
+2023-05-08 10:49:03,236 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: cancel
+2023-05-08 10:49:03,237 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: cancel
+2023-05-08 10:49:05,266 DEBUG   HandlerThread:6628 [handler.py:handle_request():144] handle_request: shutdown
+2023-05-08 10:49:05,266 INFO    HandlerThread:6628 [handler.py:finish():845] shutting down handler
+2023-05-08 10:49:06,262 INFO    WriterThread:6628 [datastore.py:close():298] close: D:\pycharm\Projects\DRL-MTSP-main\wandb\run-20230508_104802-gazqeywr\run-gazqeywr.wandb
+2023-05-08 10:49:09,260 DEBUG   SenderThread:6628 [sender.py:send():384] Record cancelled: run
+2023-05-08 10:49:09,260 INFO    SenderThread:6628 [sender.py:finish():1550] shutting down sender

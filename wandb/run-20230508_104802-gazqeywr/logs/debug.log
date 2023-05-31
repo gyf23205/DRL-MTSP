@@ -1,0 +1,140 @@
+2023-05-08 10:48:02,921 INFO    MainThread:12668 [wandb_setup.py:_flush():76] Configure stats pid to 12668
+2023-05-08 10:48:02,921 INFO    MainThread:12668 [wandb_setup.py:_flush():76] Loading settings from C:\Users\63218\.config\wandb\settings
+2023-05-08 10:48:02,921 INFO    MainThread:12668 [wandb_setup.py:_flush():76] Loading settings from D:\pycharm\Projects\DRL-MTSP-main\wandb\settings
+2023-05-08 10:48:02,921 INFO    MainThread:12668 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-05-08 10:48:02,921 INFO    MainThread:12668 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'playground.py', 'program': 'D:/pycharm/Projects/DRL-MTSP-main/playground.py'}
+2023-05-08 10:48:02,921 INFO    MainThread:12668 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-05-08 10:48:02,921 INFO    MainThread:12668 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-05-08 10:48:02,921 INFO    MainThread:12668 [wandb_init.py:_log_setup():507] Logging user logs to D:\pycharm\Projects\DRL-MTSP-main\wandb\run-20230508_104802-gazqeywr\logs\debug.log
+2023-05-08 10:48:02,921 INFO    MainThread:12668 [wandb_init.py:_log_setup():508] Logging internal logs to D:\pycharm\Projects\DRL-MTSP-main\wandb\run-20230508_104802-gazqeywr\logs\debug-internal.log
+2023-05-08 10:48:02,922 INFO    MainThread:12668 [wandb_init.py:init():547] calling init triggers
+2023-05-08 10:48:02,922 INFO    MainThread:12668 [wandb_init.py:init():554] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.02, 'architecture': 'CNN', 'dataset': 'CIFAR-100', 'epochs': 10}
+2023-05-08 10:48:02,922 INFO    MainThread:12668 [wandb_init.py:init():595] starting backend
+2023-05-08 10:48:02,922 INFO    MainThread:12668 [wandb_init.py:init():599] setting up manager
+2023-05-08 10:48:02,924 INFO    MainThread:12668 [backend.py:_multiprocessing_setup():106] multiprocessing start_methods=spawn, using: spawn
+2023-05-08 10:48:02,927 INFO    MainThread:12668 [wandb_init.py:init():605] backend started and connected
+2023-05-08 10:48:02,929 INFO    MainThread:12668 [wandb_init.py:init():695] updated telemetry
+2023-05-08 10:48:02,930 INFO    MainThread:12668 [wandb_init.py:init():732] communicating run to backend with 60.0 second timeout
+2023-05-08 10:48:26,546 INFO    Thread-5  :12668 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connectionpool.py", line 700, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connectionpool.py", line 996, in _prepare_proxy
+    conn.connect()
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connection.py", line 364, in connect
+    self.sock = conn = self._connect_tls_proxy(hostname, conn)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connection.py", line 499, in _connect_tls_proxy
+    socket = ssl_wrap_socket(
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\util\ssl_.py", line 453, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\util\ssl_.py", line 495, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock)
+  File "D:\Anaconda\envs\VRP\lib\ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "D:\Anaconda\envs\VRP\lib\ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "D:\Anaconda\envs\VRP\lib\ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1114: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Cannot connect to proxy.', timeout('_ssl.c:1114: The handshake operation timed out')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\internal\internal_api.py", line 285, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\lib\gql_request.py", line 55, in execute
+    request = self.session.post(self.url, **post_args)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\sessions.py", line 635, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\adapters.py", line 559, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Cannot connect to proxy.', timeout('_ssl.c:1114: The handshake operation timed out')))
+2023-05-08 10:48:31,524 INFO    Thread-6  :12668 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connectionpool.py", line 700, in urlopen
+    self._prepare_proxy(conn)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connectionpool.py", line 996, in _prepare_proxy
+    conn.connect()
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connection.py", line 364, in connect
+    self.sock = conn = self._connect_tls_proxy(hostname, conn)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connection.py", line 499, in _connect_tls_proxy
+    socket = ssl_wrap_socket(
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\util\ssl_.py", line 453, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\util\ssl_.py", line 495, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock)
+  File "D:\Anaconda\envs\VRP\lib\ssl.py", line 500, in wrap_socket
+    return self.sslsocket_class._create(
+  File "D:\Anaconda\envs\VRP\lib\ssl.py", line 1040, in _create
+    self.do_handshake()
+  File "D:\Anaconda\envs\VRP\lib\ssl.py", line 1309, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1114: The handshake operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\adapters.py", line 489, in send
+    resp = conn.urlopen(
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "D:\Anaconda\envs\VRP\lib\site-packages\urllib3\util\retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Cannot connect to proxy.', timeout('_ssl.c:1114: The handshake operation timed out')))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\lib\retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\internal\internal_api.py", line 285, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\lib\gql_request.py", line 55, in execute
+    request = self.session.post(self.url, **post_args)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\sessions.py", line 635, in post
+    return self.request("POST", url, data=data, json=json, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\sessions.py", line 587, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\sessions.py", line 701, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\Anaconda\envs\VRP\lib\site-packages\requests\adapters.py", line 559, in send
+    raise ProxyError(e, request=request)
+requests.exceptions.ProxyError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by ProxyError('Cannot connect to proxy.', timeout('_ssl.c:1114: The handshake operation timed out')))
+2023-05-08 10:49:03,236 ERROR   MainThread:12668 [wandb_init.py:init():758] encountered error: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-05-08 10:49:05,265 ERROR   MainThread:12668 [wandb_init.py:init():1163] Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\wandb_init.py", line 1145, in init
+    run = wi.init()
+  File "D:\Anaconda\envs\VRP\lib\site-packages\wandb\sdk\wandb_init.py", line 764, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 60.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2023-05-08 10:49:09,261 WARNING MsgRouterThr:12668 [router.py:message_loop():77] message_loop has been closed
